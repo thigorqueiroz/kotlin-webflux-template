@@ -1,4 +1,4 @@
-package com.thigorqueiroz.reactivefry.usecase
+package com.thigorqueiroz.reactivefry.usecases
 
 import reactor.core.publisher.Mono
 
