@@ -11,9 +11,7 @@ class CampaignRouter(private val campaignHandler: CampaignHandler) {
     @Bean
     fun campaignRoutes() = router {
         "campaigns".nest {
-            POST("/") {
-                campaignHandler.create(it)
-            }
+            POST("/", campaignHandler::create)
         }
     }
 }

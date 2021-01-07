@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono
 class CreateCampaignUseCase(
        private val campaignCreator: CampaignCreator
 ) : MonoUseCase<Request, Response>{
-    override fun execute(input: Request): Mono<Response> {
-        return campaignCreator.create(input.name).map { Response(it) }
+    override fun invoke(input: Mono<Request>): Mono<Response> {
+        return campaignCreator.create(input).map { Response(it) }
     }
 }
